@@ -5,7 +5,7 @@ require 'rubygems'
 require 'watir' # I'm running 6.16.5
 
 class FillApplication
-  attr_accessor :browser
+  attr_accessor :driver
   def initialize
     download_directory = "/home/noah/Downloads" # hack as needed
 
