@@ -1,0 +1,69 @@
+data lookup and click
+@driver.find_element(:id, 'App_CustList_0__SalCd').find_element(:css, "option[value=\"#{data[:title]}\"]").click
+@driver.find_element(:id, 'App_CustList_0__DOBDate').find_element(:css, "option[value=\"#{data[:dobDate]}\"]").click
+@driver.find_element(:id, 'App_CustList_0__DOBMonth').find_element(:css, "option[value=\"#{data[:dobMonth]}\"]").click
+@driver.find_element(:id, 'App_CustList_0__CountryOfBirthCd').find_element(:css, "option[value=\"#{data[:country]}\"]").click
+@driver.find_element(:id, 'App_CustList_0__NoOfDep').find_element(:css, "option[value=\"#{data[:numberOfDependants]}\"]").click
+@driver.find_element(:id, 'App_CustList_0__EdLevelCd').find_element(:css, "option[value=\"#{data[:educationLevel]}\"]").click
+@driver.find_element(:id, 'App_CustList_0__CustAdd_0__ResidentStatusCd').find_element(:css, "option[value=\"#{data[:residentialStatus]}\"]").click
+@driver.find_element(:id, 'App_CustList_0__CustAdd_0__YearsInResidence').find_element(:css, "option[value=\"#{data[:yearsInResidence]}\"]").click
+@driver.find_element(:id, 'App_CustList_0__Emp_OccupationCd').find_element(:css, "option[value=\"#{data[:occupation]}\"]").click
+@driver.find_element(:id, 'App_CustList_0__Emp_LenOfSvc').find_element(:css, "option[value=\"#{data[:yearsWithEmployer]}\"]").click
+@driver.find_element(:id, 'App_CustList_0__Emp_BizzTypeCd').find_element(:css, "option[value=\"#{data[:natureOfBusiness]}\"]").click
+@driver.find_element(:id, 'App_CustList_0__Emp_AnnualIncRangeCd').find_element(:css, "option[value=\"#{data[:annualIncome]}\"]").click
+
+
+
+Straight up click
+@driver.find_element(:id, 'skipcpf').click
+@driver.find_element(:id, 'card-options').click
+@driver.find_element(:id, 'App_FacList_0__ApplyCW').click
+@driver.find_element(:id, 'App_CustList_0__IsMrktConsentByPhoneAndSMS').click
+
+
+Conditional Click
+@driver.find_element(:css, '#App_CustList_0__PrefMailAdd[value="H"]').click
+@driver.find_element(:id, 'App_CustList_0__Emp_IsSelfEmployed').find_element(:css, 'option[value="Y"]').click
+
+
+
+data lookup and send keys
+@driver.find_element(:id, 'App_CustList_0__Nm').send_keys(data[:name])
+@driver.find_element(:id, 'App_CustList_0__FacRelShip_0__NameOnCard').send_keys(data[:nameOnCard])
+@driver.find_element(:id, 'App_CustList_0__MotherMaiden').send_keys(data[:motherMaidenName])
+@driver.find_element(:id, 'App_CustList_0__MobileNo').send_keys(data[:homeNumber])
+@driver.find_element(:id, 'App_CustList_0__HomeOfficeNo').send_keys(data[:mobileNumber])
+@driver.find_element(:id, 'App_CustList_0__CustAdd_0__PostalCode').send_keys(data[:homePostalCode])
+@driver.find_element(:id, 'App_CustList_0__CustAdd_0__BlockNo').send_keys(data[:homeBlockNumber])
+@driver.find_element(:id, 'App_CustList_0__CustAdd_0__StreetName').send_keys(data[:homeStreet])
+@driver.find_element(:id, 'App_CustList_0__Emp_EmployerNm').send_keys(data[:nameOfEmployer])
+
+
+
+set value and send keys
+@driver.find_element(:css, '#App_CustList_0__AreYouSingaporean[value="Y"]').click
+
+
+
+clear & send keys
+@driver.find_element(:id, 'App_CustList_0__DOBYear').send_keys(data[:dobYear])
+@driver.find_element(:id, 'App_CustList_0__Email').send_keys(data[:email])
+
+
+
+conditional send keys
+@driver.find_element(:id, 'App_CustList_0__NRIC').send_keys(data[:nric])
+@driver.find_element(:id, 'App_CustList_0__CustAdd_1__PostalCode').send_keys(data[:officePostalCode])
+@driver.find_element(:id, 'App_CustList_0__CustAdd_1__BlockNo').send_keys(data[:officeBlockNumber])
+@driver.find_element(:id, 'App_CustList_0__CustAdd_1__StreetName').send_keys(data[:officeStreet])
+  Parse
+  @driver.find_element(:id, 'App_CustList_0__CustAdd_1__FloorNo').send_keys(get_floor_number(data[:officeUnitNumber]))
+  @driver.find_element(:id, 'App_CustList_0__CustAdd_1__UnitNo').send_keys(get_unit_number(data[:officeUnitNumber]))
+
+
+
+
+Parse and send keys
+@driver.find_element(:id, 'App_CustList_0__CustAdd_0__FloorNo').send_keys(get_floor_number(data[:homeUnitNumber]))
+@driver.find_element(:id, 'App_CustList_0__CustAdd_0__UnitNo').send_keys(get_unit_number(data[:homeUnitNumber]))
+
